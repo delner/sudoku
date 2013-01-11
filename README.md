@@ -6,9 +6,19 @@ A Sudoku game hacked together for a 24-hour coding competition, with several coo
 
 ### Installation
 
+#### Pre-requisites
+
+This game was built on the *.NET 4.0 & Windows Presentation Foundation (WPF)* platform. As such, it is required that you:
+
+* Are running Windows (sorry, fellow Linux geeks!)
+* Have the [.NET 4.0 Framework](http://www.microsoft.com/en-us/download/details.aspx?id=17851) or later installed
+
+#### How to install
+
 You may either install Sudoku or run it as a Standalone:
-Install:		Double-click “..\install\Sudoku.Install.msi” and follow the on screen instructions.
-Standalone:	Double-click “..\install\Sudoku.exe” and start playing.
+
+* **Install**:		Double-click `..\install\Sudoku.Install.msi` and follow the on screen instructions.
+* **Standalone**:	Double-click `..\install\Sudoku.exe` and start playing.
 
 
 ### Usage
