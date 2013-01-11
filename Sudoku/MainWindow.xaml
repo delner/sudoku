@@ -1,0 +1,45 @@
+﻿<Window x:Class="Sudoku.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:Sudoku"
+        Title="Sudoku [by David Elner]"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ThreeDBorderWindow"
+        ResizeMode="CanMinimize"
+        Width="Auto"
+        Height="Auto"
+        Icon="/Sudoku;component/Content/icon.png">
+    <DockPanel LastChildFill="True">
+        <Menu Height="20" Name="MainMenu" HorizontalAlignment="Stretch" Background="#CCCCCC" DockPanel.Dock="Top">
+            <MenuItem Header="File" Height="20" VerticalContentAlignment="Center" VerticalAlignment="Center">
+                <MenuItem x:Name="PuzzleLibraryMenuItem" Header="  Puzzle Library..." Click="PuzzleLibraryMenuItem_Click" />
+                <MenuItem x:Name="SaveMenuItem" Header="  Save" Click="SaveMenuItem_Click" />
+                <MenuItem x:Name="QuitMenuItem" Header="  Quit" Click="QuitMenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="Game" Height="20" VerticalContentAlignment="Center" VerticalAlignment="Center">
+                <MenuItem x:Name="ShowPossibilitiesMenuItem" Header="  Show Possibilities on Hover" IsCheckable="True" IsChecked="True" Click="ShowPossibilitiesMenuItem_Click" />
+                <MenuItem x:Name="ShowErrorsMenuItem" Header="  Show Errors" IsCheckable="True" IsChecked="False" Click="ShowErrorsMenuItem_Click" />
+                <Separator />
+                <MenuItem x:Name="RemoveErrorsMenuItem" Header="  Remove Errors" Click="RemoveErrorsMenuItem_Click" />
+                <MenuItem x:Name="SolveMenuItem" Header="  Solve" Click="SolveMenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="Help" Height="20" VerticalContentAlignment="Center" VerticalAlignment="Center">
+                <MenuItem x:Name="AboutMenuItem" Header=" About..." Click="AboutMenuItem_Click" />
+            </MenuItem>
+        </Menu>
+        <Border Background="#DDDDDD" Padding="20,10,20,10" DockPanel.Dock="Bottom">
+            <StackPanel Orientation="Vertical">
+                <StackPanel x:Name="PossibleValuesPanel" Orientation="Horizontal" Height="20">
+                    <TextBlock VerticalAlignment="Center" Text="Possible Values:" Margin="13,0,20,0" FontWeight="Bold"/>
+                    <TextBlock x:Name="PossibleValuesTextBlock" VerticalAlignment="Center" Foreground="#50AAEE" FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="20">
+                    <TextBlock VerticalAlignment="Center" Text="#'s Remaining:" Margin="20,0,20,0" FontWeight="Bold"/>
+                    <TextBlock x:Name="RemainingNumbersTextBlock" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border x:Name="SudokuGridContainer" Background="#EEEEEE" Padding="20" Height="Auto" Width="Auto" />
+    </DockPanel>
+</Window>
